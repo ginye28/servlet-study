@@ -2,7 +2,6 @@ package com.example.servletstudy.login;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
 @WebFilter("/api/*")     //모든 요청에 필터를 거침

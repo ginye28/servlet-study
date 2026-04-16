@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% //java 코드 입력 가능
+<%
     String name = (String) request.getAttribute("name");
     String year = request.getParameter("year");
     if (year.equals("2026")) {

@@ -1,7 +1,5 @@
 package com.example.servletstudy.login;
 
-import com.fasterxml.jackson.core.JsonParser;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +24,7 @@ public class AuthenticationController extends HttpServlet {
         Map<String, Object> requestBody = JsonParserUtil.parse(json);
         System.out.println(requestBody);
         if (!loginUser.getUsername().equals(requestBody.get("username"))) {
-            errorResponse(reap, "사용자 정보가 일치하지 않습니다.");
+            errorResponse(resp, "사용자 정보가 일치하지 않습니다.");
         }
     }
 
@@ -38,7 +36,7 @@ public class AuthenticationController extends HttpServlet {
                 "code", 403,
                 "message", message
         );
-        resp.getWriter().println(JsonParserUtil.stringify());
+        resp.getWriter().println(JsonParserUtil.stringify(responseMap));
     }
 
 }
