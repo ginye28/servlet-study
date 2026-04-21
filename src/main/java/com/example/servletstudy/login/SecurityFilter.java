@@ -20,7 +20,8 @@ public class SecurityFilter implements Filter {
         String projectNameIgnoreUri = uri.substring(uri.indexOf("/", 1));       //1번 index부터 uri를 찾음
 
 
-        if (projectNameIgnoreUri.startsWith("/api/auth")) {      //이 줄이 없으면 로그인을 로그인 해야 쓸 수 있음
+        if (projectNameIgnoreUri.startsWith("/api/auth")       //이 줄이 없으면 로그인을 로그인 해야 쓸 수 있음
+                || projectNameIgnoreUri.startsWith("/api/html")) {
             chain.doFilter(request, response);
             return;    //갔다가 돌아올 때 밑에 줄이 실행되니 return
         }
